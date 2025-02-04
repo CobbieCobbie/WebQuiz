@@ -18,7 +18,7 @@ This will install *streamlit* and *statemachine* modules.
 
 Finally, run
 ```
-streamlit run ./demo_test.py
+streamlit run ./demo_test.py --client.showSidebarNavigation false
 ```
 This will set up a local web server and open a client in your default browser.
 
