@@ -3,7 +3,7 @@ import streamlit as st
 st.header("Thanks for playing!")
 
 
-st.session_state['state_machine'].send("cycle")
+st.session_state['state_machine'].send("end")
 
 @st.dialog("State of the state machine")
 def state_machine_dialog():

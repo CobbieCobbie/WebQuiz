@@ -1,36 +1,49 @@
-from statemachine import StateMachine, State
+from statemachine import StateMachine, State, Event
 
 
 class QuizStateMachine(StateMachine):
     "A quiz state machine that manages the quiz states."
     welcome = State(initial=True)
-    mark = State()
-    eval = State()
-    end = State()
+    quiz_start = State()
+    quiz_eval = State()
+    result = State()
 
-    cycle = (
-        welcome.to(mark) 
-        | mark.to(eval)
-        | eval.to(end)
-        | end.to(welcome)
+    start = Event(
+            welcome.to(quiz_start),
+            name="Start the quiz and initialize the statements"
     )
 
-    def before_cycle(self, event: str, source: State, target: State, message: str = ""):
-        message = ". " + message if message else ""
-        return f"Due to {event} from state {source.id} to state {target.id}{message}"
-    
-    def on_welcome(self):
-        print("Welcome state entered.")
-        return self.before_cycle("on_welcome", self.welcome, self.mark, "Welcome to the quiz.")
-    
-    def on_mark(self):
-        print("Mark state entered.")
-        return self.before_cycle("on_mark", self.mark, self.eval, "Marking the statements.")
-    
-    def on_eval(self):
-        print("Eval state entered.")
-        return self.before_cycle("on_eval", self.eval, self.end, "Evaluating the user statement choice.")
-    
-    def on_end(self):
-        print("End state entered.")
-        return self.before_cycle("on_end", self.end, self.welcome, "End of the quiz. Thanks for playing!")
+    eval = Event(
+        quiz_start.to(quiz_eval),
+        name="Evaluate the user statement choice"
+    )
+
+    end = Event(
+        quiz_eval.to(result),
+        name="Show the overall results and end the quiz"
+    )
+
+    reset = Event(
+        result.to(welcome)
+        | quiz_start.to(welcome)
+        | quiz_eval.to(welcome),
+        name="Reset the quiz to the initial state"
+    )
+
+    cycle = Event(
+        welcome.to(quiz_start, event=start) 
+        | quiz_start.to(quiz_eval, event=eval)
+        | quiz_eval.to(result, event=end)
+        | result.to(welcome, event=reset),
+        name="Cycle through the states"
+    )
+
+def on_transition(self, event_data, event: Event):
+        # The `event` parameter can be declared as `str` or `Event`, since `Event` is a subclass of `str`
+        # Note also that in this example, we're using `on_transition` instead of `on_cycle`, as this
+        # binds the action to run for every transition instead of a specific event ID.
+        assert event_data.event == event
+        return (
+            f"Running {event.name} from {event_data.transition.source.id} to "
+            f"{event_data.transition.target.id}"
+        )

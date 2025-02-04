@@ -1,17 +1,12 @@
 import Quiz.Statement as Statement
 import streamlit as st
+import session_manager as sessions
 
+
+sessions.init()
 
 st.title("Quiz Web App Template")
 st.write("This is a quiz testing page.")
-
-@st.dialog("Cast your vote")
-def vote(item):
-    st.write(f"Why is {item} your favorite?")
-    reason = st.text_input("Because...")
-    if st.button("Submit"):
-        st.session_state.vote = {"item": item, "reason": reason}
-        st.rerun()
 
 
 st.page_link("pages/a_welcome.py", label="Initialize Quiz", use_container_width=True, icon="👍")

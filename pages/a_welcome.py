@@ -1,27 +1,23 @@
 import streamlit as st
-import Quiz.state_machine as sm
+import session_manager as sessions
 
 
-def init_session():
-    if 'state_machine' not in st.session_state:
-        st.session_state['state_machine'] = sm.QuizStateMachine()
-
-init_session()
-
+st.session_state['state_machine'].send("reset")
 
 st.title("Welcome to the Quiz")
 
-# st.markdown(
-# """
-# # This is the Welcome Screen
 
-# ## Demonstration of your choice
-# Place some information about your demonstration here
+st.markdown(
+"""
+# This is the Welcome Screen
 
-# ## How to play
-# Click on the statements that you think that are true. When you are done, press the button "Evaluate". Enjoy!           
-# """
-# )
+## Demonstration of your choice
+Place some information about your demonstration here
+
+## How to play
+Click on the statements that you think that are true. When you are done, press the button "Evaluate". Enjoy!           
+"""
+)
 
 
 
