@@ -1,5 +1,5 @@
 import streamlit as st
-import session_manager as sessions
+import extras.session_manager as sessions
 
 
 st.session_state['state_machine'].send("reset")
