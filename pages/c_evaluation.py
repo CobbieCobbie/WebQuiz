@@ -2,6 +2,7 @@ import streamlit as st
 
 st.header("Evaluation of your marked statements")
 
+st.session_state['state_machine'].send("eval")
 
 @st.dialog("State of the state machine")
 def state_machine_dialog():
