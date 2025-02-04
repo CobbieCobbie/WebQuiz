@@ -1,0 +1,32 @@
+[
+    {
+        "id": 0,
+        "TrueStatement": "Ein autonomes Fahrzeug, trainiert auf Berlin, kann in München nicht ohne weiteres autonom fahren.",
+        "FalseStatement": "Jedes autonome Fahrzeug aus Mitteleuropa ist in jeder Stadt Mitteleuropas direkt einsatzbereit.",
+        "Description": "Wirtschaftlicher Druck, unerforschte Validierung und fehlende Testdaten führen zu unvollständiger Berücksichtigung aller Domänen und somt zu unausgereiften Trainingsdatensätzen."
+    },
+    {
+        "id": 1,
+        "TrueStatement": "Ein neues Straßenschild, das nicht im Trainingsdatensatz der KI enthalten ist, wird von der KI nicht erkannt.",
+        "FalseStatement": "Neue Straßenschilder werden sofort von der KI erkannt und klassifiziert.",
+        "Description": "Lücken im Trainingssatz der KI führen zu falschen Klassifizierungen im Maschinellem Sehen und somit zu unerwarteten Fahrverhalten von autonomen Fahrzeugen in realen Szenarien."
+    },
+    {
+        "id": 2,
+        "TrueStatement": "Ein Ausfall der Kamera kann zu einem Ausfall der Objektklassifizierung führen.",
+        "FalseStatement": "Jeglicher Ausfall der Sensoren wird durch eine ausreichend gut trainierte KI abgefangen.",
+        "Description": "Das Maschinelle Sehen hat einen direkten Einfluss auf das Verhalten eines autonomen Fahrzeuges."
+    },
+    {
+        "id": 3,
+        "TrueStatement": "",
+        "FalseStatement": "False Statement 4",
+        "Description": "Perzeption beschreibt die zuverlässige, KI- und sensorgestützte technische Ungebungswahrnehmung."
+    },
+    {
+        "id": 4,
+        "TrueStatement": "True Statement 5",
+        "FalseStatement": "False Statement 5",
+        "Description": "Maschinelles Sehen adressiert die Erkennung befahrbarer Bereiche und Interpretation von Signalen"
+    }
+]

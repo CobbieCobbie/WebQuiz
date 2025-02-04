@@ -1,0 +1,35 @@
+# Quiz Web App Template
+
+Welcome to the README of the Web Quiz Web App Template! In this  
+
+## Content
+
+## How to install
+
+You have to have a running python system. I recommend initilalizing a virtual python environment.
+
+Install the dependencies
+
+```
+pip install -r requirements.txt
+```
+
+This will install *streamlit* and *statemachine* modules.
+
+Finally, run
+```
+streamlit run ./demo_test.py
+```
+This will set up a local web server and open a client in your default browser.
+
+## recommended streamlit configuration
+
+Since we work with streamlits [st.page_link](https://docs.streamlit.io/develop/api-reference/widgets/st.page_link), we can disable the sidebar for the pages
+
+u can call 
+```
+streamlit config show
+```
+
+
+to see the current configuration
