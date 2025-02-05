@@ -1,3 +1,5 @@
 streamlit >= 1.41.1
 python-statemachine >= 2.5.0
 streamlit_extras >= 0.5.0
+streamlit_javascript >= 0.1.5
+st-star-rating >= 0.0.6
