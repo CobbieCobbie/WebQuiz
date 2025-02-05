@@ -3,10 +3,10 @@ from statemachine import StateMachine, State, Event
 
 class QuizStateMachine(StateMachine):
     "A quiz state machine that manages the quiz states."
-    welcome = State(initial=True)
-    quiz_start = State()
-    quiz_eval = State()
-    result = State()
+    welcome = State(name = "welcome", initial=True)
+    quiz_start = State(name = "quiz_start")
+    quiz_eval = State(name = "quiz_eval")
+    result = State(name = "result")
 
     start = Event(
             welcome.to(quiz_start),
