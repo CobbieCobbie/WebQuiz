@@ -9,7 +9,15 @@ st.header("Mark the true statements")
 
 # WIP
 
-st.pills("Statements", st.session_state['statements'], selection_mode="multi")
+statements = [
+            "Statement 1 Statement 1 Statement 1 Statement 1 Statement 1", 
+            "Statement 2 Statement 2 Statement 2 Statement 2 Statement 2", 
+            "Statement 3 Statement 3 Statement 3 Statement 3 Statement 3", 
+            "Statement 4 Statement 4 Statement 4 Statement 4 Statement 4", 
+            "Statement 5 Statement 5 Statement 5 Statement 5 Statement 5"
+            ]
+
+st.pills("Statements", statements, selection_mode="multi")
 
 
 st.page_link("pages/c_evaluation.py", label="Evaluate", use_container_width=True, icon="👍")
@@ -18,11 +26,9 @@ st.page_link("pages/c_evaluation.py", label="Evaluate", use_container_width=True
 
 # debug stuff
 
-# @st.dialog("State of the state machine")
-# def state_machine_dialog():
-#     st.write("The state machine is currently in state "+ st.session_state['state_machine'].current_state.id)
-#     if st.button("Close the dialog"):
-#         st.rerun()
-# if st.button("show state"):
-#     state_machine_dialog()
+@st.dialog("State of the state machine")
+def state_machine_dialog():
+    st.write("The state machine is currently in state "+ st.session_state['state_machine'].current_state.id)
+if st.button("Statement 1 Statement 1 Statement 1 Statement 1 Statement 1 Statement 1 Statement 1 Statement 1 Statement 1 Statement 1 Statement 1 Statement 1 "):
+     state_machine_dialog()
 
