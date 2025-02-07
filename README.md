@@ -16,20 +16,23 @@ pip install -r requirements.txt
 
 This will install *streamlit* and *statemachine* modules.
 
-Finally, run
+Since we work with streamlits [st.page_link](https://docs.streamlit.io/develop/api-reference/widgets/st.page_link), we can disable the sidebar for the pages
+
+To do this, run
 ```
 streamlit run ./demo_test.py --client.showSidebarNavigation false
 ```
+
 This will set up a local web server and open a client in your default browser.
 
-## recommended streamlit configuration
-
-Since we work with streamlits [st.page_link](https://docs.streamlit.io/develop/api-reference/widgets/st.page_link), we can disable the sidebar for the pages
+## streamlit configuration
 
 u can call 
 ```
 streamlit config show
 ```
-
-
 to see the current configuration
+
+## vscode config
+
+For debugging, include the `launch.json` into your `.vscode` directory of the project

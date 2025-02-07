@@ -1,13 +1,12 @@
 import Quiz.Statement as Statement
 import streamlit as st
-import session_manager as sessions
+import extras.session_manager as sessions
 
 
 sessions.init()
 
 st.title("Quiz Web App Template")
 st.write("This is a quiz testing page.")
-
 
 st.page_link("pages/a_welcome.py", label="Initialize Quiz", use_container_width=True, icon="👍")
 

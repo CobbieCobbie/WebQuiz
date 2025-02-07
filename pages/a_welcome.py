@@ -1,8 +1,10 @@
 import streamlit as st
-import session_manager as sessions
+import extras.session_manager as sessions
 
 
+sessions.update()
 st.session_state['state_machine'].send("reset")
+
 
 st.title("Welcome to the Quiz")
 
@@ -20,15 +22,9 @@ Click on the statements that you think that are true. When you are done, press t
 )
 
 
-
-@st.dialog("State of the state machine")
-def state_machine_dialog():
-    st.write("The state machine is currently in state "+ st.session_state['state_machine'].current_state.id)
-    if st.button("Close the dialog"):
-        st.rerun()
-
-if st.button("show state"):
-    state_machine_dialog()
-
-
 st.page_link("pages/b_mark.py", label="Start", use_container_width=True, icon="👍")
+
+# debug stuff
+
+if st.button("Show state machine state"):
+    sessions.state_machine_dialog()
