@@ -1,20 +1,26 @@
+import random
 import streamlit as st
 from streamlit_javascript import st_javascript
-import Quiz.state_machine as sm
 
+
+import Quiz.state_machine as sm
+import Quiz.Statement as Statement
+import Quiz.QuizStatement as QuizStatement
 
 def init():
     if 'state_machine' not in st.session_state:
         st.session_state['state_machine'] = sm.QuizStateMachine(allow_event_without_transition=True)
         
     if 'statements' not in st.session_state:
-        st.session_state['statements'] = [
-            "Statement 1", 
-            "Statement 2", 
-            "Statement 3", 
-            "Statement 4", 
-            "Statement 5"
-            ]
+        quiz_statements = []
+        statements = Statement.Statement.load_from_file("Quiz/quiz_statements.json")        
+        for s in statements:
+            s = QuizStatement.QuizStatement(s.id, s.trueStatement, s.falseStatement, s.description)
+            quiz_statements.append(s)
+        st.session_state['statements'] = quiz_statements
+
+    if 'right_answers' not in st.session_state:
+        st.session_state['right_answers'] = 0
 
 
 def update():
@@ -22,6 +28,9 @@ def update():
         init()
     elif 'statements' not in st.session_state:
         init()
+    elif 'right_answers' not in st.session_state:
+        init()
+
     page_name = get_multipage()
     match page_name:
         case "a_welcome":
@@ -35,8 +44,13 @@ def update():
         case _:
             init()
 
+    if st.session_state['state_machine'].current_state == st.session_state['state_machine'].welcome:
+        
+        for s in st.session_state['statements']:
+            coin = random.choice([True, False])
+            s.right_answer = coin
 
-# static methods
+# useful methods
 
 def get_multipage():
     url = st_javascript("await fetch('').then(r => window.parent.location.href)")

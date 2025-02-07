@@ -1,16 +1,28 @@
+import random
 import streamlit as st
 import extras.session_manager as sessions
 
 
 @st.dialog("Description of the statement")
 def choose(description):
-   st.write("The description is: ", description)
-   st.pills("Evaluation", [True, False], key=description)
+   st.write(description)
+   st.pills("Wahr oder Falsch?", [True, False], key=description)
 
+
+# session update and state change 
 sessions.update()
 st.session_state['state_machine'].send("start")
 
 st.header("Mark the true statements")
+
+for s in st.session_state['statements']:
+   if s.right_answer:
+      if st.button(s.trueStatement):
+         choose(s.description)
+   else:
+      if st.button(s.falseStatement):
+         choose(s.description)
+
 
 # from here only for MockUp purposes 
 
@@ -26,23 +38,24 @@ st.header("Mark the true statements")
 
 # st.write("st.pills environment is not suitable for long text in the description")
 
-if st.button("Statement 1 Statement 1 Statement 1 Statement 1 Statement 1 Statement 1 Statement 1 Statement 1 Statement 1 Statement 1"):
-   choose("Description 1")
-if st.button("Statement 2 Statement 2 Statement 2 Statement 2 Statement 2 Statement 2 Statement 2 Statement 2 Statement 2 Statement 2"):
-   choose("Description 2")
 
-if st.button("Statement 3 Statement 3 Statement 3 Statement 3 Statement 3 Statement 3 Statement 3 Statement 3 Statement 3 Statement 3"):
-   choose("Description 3")
+# for s in st.session_state['statements']:
 
-if st.button("Statement 4 Statement 4 Statement 4 Statement 4 Statement 4 Statement 4 Statement 4 Statement 4 Statement 4 Statement 4"):
-   choose("Description 4")
+# if st.session_state['statement_evaluation'] != {}:
+#    for key, value in st.session_state['statement_evaluation'].items():
+#       if st.button(key):
+#          st.write(key)
 
-if st.button("Statement 5 Statement 5 Statement 5 Statement 5 Statement 5 Statement 5 Statement 5 Statement 5 Statement 5 Statement 5"):
-   choose("Description 5")
+#    if coin:
+#       st.session_state['statement_evaluation'][s.trueStatement] = True
+#       if st.button(s.trueStatement):
+#          choose(s.description)
+   
 
-
-st.write("st.button are suited to carry long descriptions")
-
+#    else:
+#       st.session_state['statement_evaluation'][s.falseStatement] = True
+#       if st.button(s.falseStatement):
+#          choose(s.description)
 
 st.page_link("pages/c_evaluation.py", label="Evaluate", use_container_width=True, icon="👍")
 

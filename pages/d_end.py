@@ -3,14 +3,21 @@ from streamlit_star_rating import st_star_rating
 
 import extras.session_manager as sessions
 
+# session update and state change 
 
 sessions.update()
 st.session_state['state_machine'].send("end")
 
+# page content
+
 st.header("That's it! You have finished the quiz.")
 
-max_statements = 5
-correct_statements = 5
+max_statements = st.session_state['statements'].__len__()
+correct_statements = 0
+
+for s in st.session_state['statements']:
+    if s.right_answer == s.player_choice:
+        correct_statements += 1
 
 if correct_statements == max_statements:
     st.balloons()
@@ -24,9 +31,8 @@ st.page_link("pages/a_welcome.py", label="Restart", use_container_width=True, ic
 
 # debug stuff
 
-if st.button("Show state machine state"):
-    sessions.state_machine_dialog()
+# if st.button("Show state machine state"):
+#     sessions.state_machine_dialog()
 
 # if correct_statements == 0:
 #     st.toast("You suck!", icon="👎")
-

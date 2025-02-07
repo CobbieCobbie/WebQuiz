@@ -2,28 +2,24 @@ import streamlit as st
 import extras.session_manager as sessions
 
 @st.dialog("Your choice")
-def evaluate(boolean):
-   st.write("You have chosen: ", boolean)   
-   st.write("Based on the fact that ....")
+def evaluate(boolean, description):
+   st.write("This is ", boolean)   
+   st.write(description)
 
+
+# session update and state change 
 sessions.update()
 st.session_state['state_machine'].send("eval")
 
 st.header("Evaluation of your marked statements")
 
-if st.button("Statement 1 Statement 1 Statement 1 Statement 1 Statement 1 Statement 1 Statement 1 Statement 1 Statement 1 Statement 1"):
-    evaluate(True)
-if st.button("Statement 2 Statement 2 Statement 2 Statement 2 Statement 2 Statement 2 Statement 2 Statement 2 Statement 2 Statement 2"):
-    evaluate(False)
-
-if st.button("Statement 3 Statement 3 Statement 3 Statement 3 Statement 3 Statement 3 Statement 3 Statement 3 Statement 3 Statement 3"):
-    evaluate(True)
-
-if st.button("Statement 4 Statement 4 Statement 4 Statement 4 Statement 4 Statement 4 Statement 4 Statement 4 Statement 4 Statement 4"):
-    evaluate(False)
-
-if st.button("Statement 5 Statement 5 Statement 5 Statement 5 Statement 5 Statement 5 Statement 5 Statement 5 Statement 5 Statement 5"):
-    evaluate(True)
+for s in st.session_state['statements']:
+    if s.right_answer:
+        if st.button(s.trueStatement):
+            evaluate(True, s.description)
+    else:
+        if st.button(s.falseStatement):
+            evaluate(False, s.description)
 # st.markdown("")
 # st.button("Statement 2 Statement 2 Statement 2 Statement 2 Statement 2 Statement 2 Statement 2 Statement 2 Statement 2 Statement 2")
 # st.markdown("")
