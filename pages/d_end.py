@@ -16,7 +16,7 @@ max_statements = st.session_state['statements'].__len__()
 correct_statements = 0
 
 for s in st.session_state['statements']:
-    if s.right_answer == s.player_choice:
+    if s.rightAnswer == s.playerChoice:
         correct_statements += 1
 
 if correct_statements == max_statements:
@@ -26,7 +26,6 @@ if correct_statements == max_statements:
 st_star_rating(label = None, maxValue = max_statements, defaultValue = correct_statements, key = "rating", read_only = True)
 
 st.page_link("pages/a_welcome.py", label="Restart", use_container_width=True, icon="👍")
-
 
 
 # debug stuff

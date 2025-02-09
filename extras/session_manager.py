@@ -48,7 +48,11 @@ def update():
         
         for s in st.session_state['statements']:
             coin = random.choice([True, False])
-            s.right_answer = coin
+            s.rightAnswer = coin
+            if coin:
+                s.chosenStatement = s.trueStatement
+            else:
+                s.chosenStatement = s.falseStatement
 
 # useful methods
 
