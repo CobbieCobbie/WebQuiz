@@ -19,14 +19,14 @@
     },
     {
         "id": 3,
-        "TrueStatement": "",
-        "FalseStatement": "False Statement 4",
-        "Description": "Perzeption beschreibt die zuverlässige, KI- und sensorgestützte technische Ungebungswahrnehmung."
+        "TrueStatement": "Perzeption im Kontext des maschinellen Sehens entstammt als Begriff aus der Wahrnehmungspsychologie.",
+        "FalseStatement": "Perzeption im Kontext des maschinellen Sehens ist losgelöst von der Wahrnehmungspsychologie.",
+        "Description": "In der Wahrnehmungspsychologie bezeichnet die Perzeption die Abstraktion visueller relevanter Informationen, Erkennung von Elementen und deren Interpretation basierend auf Erinnerungen. Im Bereich des Maschinellen Sehens beschreibt die Perzeption die zuverlässige, KI- und sensorgestützte technische Ungebungswahrnehmung."
     },
     {
         "id": 4,
-        "TrueStatement": "True Statement 5",
-        "FalseStatement": "False Statement 5",
-        "Description": "Maschinelles Sehen adressiert die Erkennung befahrbarer Bereiche und Interpretation von Signalen"
+        "TrueStatement": "Beim maschinelles Sehen übernimmt das KI-System die Aufgabe des Auges eines menschlichen Beobachters",
+        "FalseStatement": "Das maschinelle Sehen ist eine Technologie, die die menschliche Wahrnehmung nicht nachahmt.",
+        "Description": "Maschinelles Sehen adressiert im Straßenverkehr die Erkennung befahrbarer Bereiche und Interpretation von Signalen"
     }
 ]

@@ -3,14 +3,14 @@ import os
 
 
 class Statement:
-    def __init__(self, id, TrueStatement, FalseStatement, Description):
+    def __init__(self, id, trueStatement, falseStatement, description):
         self.id = id
-        self.TrueStatement = TrueStatement
-        self.FalseStatement = FalseStatement
-        self.Description = Description
+        self.trueStatement = trueStatement
+        self.falseStatement = falseStatement
+        self.description = description
 
     def __repr__(self):
-        return f"Statement(id={self.id}, TrueStatement='{self.TrueStatement}', FalseStatement='{self.FalseStatement}', Description='{self.Description}')"
+        return f"Statement(id={self.id}, TrueStatement='{self.trueStatement}', FalseStatement='{self.falseStatement}', Description='{self.description}')"
 
 
     # class methods for (de-)serialization 
@@ -18,9 +18,9 @@ class Statement:
     def to_json(self):
         return json.dumps({
             'id': self.id, 
-            'TrueStatement': self.TrueStatement, # Bound by a number of chars, for readability of the Web App button on a tablet, e.g. 150 chars
-            'FalseStatement': self.FalseStatement, # Bound by a number of chars, for readability of the Web App button on a tablet, e.g. 150 chars
-            'Description': self.Description # Bound by a number of chars, for readability of the Web App button on a tablet, e.g. 400 chars
+            'TrueStatement': self.trueStatement, # Bound by a number of chars, for readability of the Web App button on a tablet, e.g. 150 chars
+            'FalseStatement': self.falseStatement, # Bound by a number of chars, for readability of the Web App button on a tablet, e.g. 150 chars
+            'Description': self.description # Bound by a number of chars, for readability of the Web App button on a tablet, e.g. 400 chars
         })
 
     @staticmethod
