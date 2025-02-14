@@ -28,5 +28,41 @@
         "TrueStatement": "Beim maschinelles Sehen übernimmt das KI-System die Aufgabe des Auges eines menschlichen Beobachters",
         "FalseStatement": "Das maschinelle Sehen ist eine Technologie, die die menschliche Wahrnehmung nicht nachahmt.",
         "Description": "Maschinelles Sehen adressiert im Straßenverkehr die Erkennung befahrbarer Bereiche und Interpretation von Signalen"
+    },
+    {
+        "id": 5,
+        "TrueStatement": "Ein unkorrigiertes falsches Ergebnis führt bei einer selbstlernenden KI zu Folgefehlern.",
+        "FalseStatement": "Selbstlernende KIs lernen auch, ihre eigenen Fehler zu korrigieren.",
+        "Description": "Verzerrte Ergebnisse von selbstlernenden KIs verzerren Folgeergebnisse weiter, die sogenannte Rückkopplungsschleife."
+    },
+    {
+        "id": 6,
+        "TrueStatement": "Hochrisiko-KIs müssen laut EU-Verordnung so widerstandsfähig wie möglich gegenüber Fehlern, Störungen oder Unstimmigkeiten sein.",
+        "FalseStatement": "Hochrisiko-KIs unterliegen einer erlaubten Toleranz hinsichtlich Fehlern, Störungen oder Unstimmigkeiten.",
+        "Description": "Die Robustheitsgarantie einer Hochrisiko-KI ist im EU AI Act festgelegt."
+    },
+    {
+        "id": 7,
+        "TrueStatement": "Um KI-Technologien bewerten zu können, brauchte es keinen Zugriff auf den Code, es reichen Eingabedaten und Ergebnisse.",
+        "FalseStatement": "Um KI-Technologien bewerten zu können, müssen die Algorithmen im Code geprüft werden.",
+        "Description": "Für die Analyse von KI Technologien reicht die Bewertung von Eingabedaten und dessen Ergebnissen, das sogenannte Black-Box Testing."
+    },
+    {
+        "id": 8,
+        "TrueStatement": "Sensoren und Kameras sind essentiell für das Verhalten eines autonomen Fahrzeugs.",
+        "FalseStatement": "Jeglicher Ausfall der Sensoren wird durch eine ausreichend gut trainierte KI abgefangen.",
+        "Description": "Das Maschinelle Sehen hat einen direkten Einfluss auf das Verhalten eines sensorischen KI-Systems."
+    },
+    {
+        "id": 9,
+        "TrueStatement": "Nur mit einem Datensatz ohne Lücken kann maschinelles Sehen hinreichend sicher trainiert werden.",
+        "FalseStatement": "Dank KI kann auch mit einem lückenhaften Datensatz perfekte Objektwahrnehmung realisiert werden.",
+        "Description": "Lücken im Trainingssatz der KI führen zu falschen Klassifizierungen im Maschinellem Sehen."
+    },
+    {
+        "id": 10,
+        "TrueStatement": "Aktuelle KI-Trainingsdatensätze müssen auf Lücken geprüft werden und können auch unausgereift sein.",
+        "FalseStatement": "Für das KI-Training stehen heutzutage genügend Trainingsdatensätze in perfekter Qualität bereit.",
+        "Description": "Wirtschaftlicher Druck, unerforschte Validierung und fehlende Testdaten führen zu unvollständiger Berücksichtigung aller Domänen und somit zu unausgereiften Trainingsdatensätzen."
     }
 ]

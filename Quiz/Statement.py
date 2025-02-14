@@ -34,7 +34,7 @@ class Statement:
             print(f"File {filename} does not exist.")
             return []
 
-        with open(filename, "r") as file:
+        with open(filename, "r", encoding='utf-8') as file:
             statements_data = json.load(file)
 
         # Deserialize each statement from JSON string to Statement object
