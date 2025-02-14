@@ -5,7 +5,7 @@ import extras.session_manager as sessions
 
 @st.dialog("Wahr oder falsch?")
 def choose(statement):
-   st.write(statement.description)
+   st.write(statement.chosenStatement)
    statement.playerChoice = st.pills("Wahr oder Falsch?", [True, False], key=statement.description)
 
 
