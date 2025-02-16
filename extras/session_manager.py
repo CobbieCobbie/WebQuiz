@@ -11,12 +11,16 @@ def init():
     if 'state_machine' not in st.session_state:
         st.session_state['state_machine'] = sm.QuizStateMachine(allow_event_without_transition=True)
         
+    if 'statement_amount' not in st.session_state:
+        st.session_state['statement_amount'] = 5
     if 'statements' not in st.session_state:
         quiz_statements = []
         statements = Statement.Statement.load_from_file("Quiz/quiz_statements.json")        
         for s in statements:
             s = QuizStatement.QuizStatement(s.id, s.trueStatement, s.falseStatement, s.description)
             quiz_statements.append(s)
+        while len(quiz_statements) > st.session_state['statement_amount']:
+            quiz_statements.pop(random.randint(0, len(quiz_statements) - 1))
         st.session_state['statements'] = quiz_statements
 
     if 'right_answers' not in st.session_state:
