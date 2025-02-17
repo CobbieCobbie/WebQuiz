@@ -6,7 +6,7 @@ Welcome to the README of the Web Quiz Web App Template! In this
 
 ## How to install
 
-You have to have a running python system. I recommend initilalizing a virtual python environment.
+You have to have a running python system. I recommend initializing a virtual python environment.
 
 Install the dependencies
 
@@ -20,7 +20,7 @@ Since we work with streamlits [st.page_link](https://docs.streamlit.io/develop/a
 
 To do this, run
 ```
-streamlit run ./demo_test.py --client.showSidebarNavigation false
+streamlit run ./quiz_test.py --client.showSidebarNavigation false --browser.gatherUsageStats=false
 ```
 
 This will set up a local web server and open a client in your default browser.
