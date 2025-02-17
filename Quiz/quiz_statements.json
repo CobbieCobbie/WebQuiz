@@ -3,11 +3,11 @@
         "id": 0,
         "TrueStatement": "Ein autonomes Fahrzeug, trainiert auf Berlin, kann in München nicht ohne weiteres autonom fahren.",
         "FalseStatement": "Jedes autonome Fahrzeug aus Mitteleuropa ist in jeder Stadt Mitteleuropas direkt einsatzbereit.",
-        "Description": "Wirtschaftlicher Druck, unerforschte Validierung und fehlende Testdaten führen zu unvollständiger Berücksichtigung aller Domänen und somt zu unausgereiften Trainingsdatensätzen."
+        "Description": "Wirtschaftlicher Druck, unerforschte Validierung und fehlende Testdaten führen zu unvollständiger Berücksichtigung aller Domänen und somit zu unausgereiften Trainingsdatensätzen."
     },
     {
         "id": 1,
-        "TrueStatement": "Ein neues Straßenschild, das nicht im Trainingsdatensatz der KI enthalten ist, wird von der KI nicht erkannt.",
+        "TrueStatement": "Ein neues Straßenschild, das nicht im Trainingsdatensatz der KI enthalten ist, wird von der KI womöglich nicht direkt erkannt.",
         "FalseStatement": "Neue Straßenschilder werden sofort von der KI erkannt und klassifiziert.",
         "Description": "Lücken im Trainingssatz der KI führen zu falschen Klassifizierungen im Maschinellem Sehen und somit zu unerwarteten Fahrverhalten von autonomen Fahrzeugen in realen Szenarien."
     },
@@ -27,7 +27,7 @@
         "id": 4,
         "TrueStatement": "Beim maschinelles Sehen übernimmt das KI-System die Aufgabe des Auges eines menschlichen Beobachters",
         "FalseStatement": "Das maschinelle Sehen ist eine Technologie, die die menschliche Wahrnehmung nicht nachahmt.",
-        "Description": "Maschinelles Sehen adressiert im Straßenverkehr die Erkennung befahrbarer Bereiche und Interpretation von Signalen"
+        "Description": "Maschinelles Sehen adressiert im Straßenverkehr die Erkennung befahrbarer Bereiche und Interpretation von Signalen."
     },
     {
         "id": 5,
@@ -38,14 +38,14 @@
     {
         "id": 6,
         "TrueStatement": "Hochrisiko-KIs müssen laut EU-Verordnung so widerstandsfähig wie möglich gegenüber Fehlern, Störungen oder Unstimmigkeiten sein.",
-        "FalseStatement": "Hochrisiko-KIs unterliegen einer erlaubten Toleranz hinsichtlich Fehlern, Störungen oder Unstimmigkeiten.",
+        "FalseStatement": "Hochrisiko-KIs unterliegen einer erlaubten konkret bezifferten Toleranz hinsichtlich Fehlern, Störungen oder Unstimmigkeiten.",
         "Description": "Die Robustheitsgarantie einer Hochrisiko-KI ist im EU AI Act festgelegt."
     },
     {
         "id": 7,
-        "TrueStatement": "Um KI-Technologien bewerten zu können, brauchte es keinen Zugriff auf den Code, es reichen Eingabedaten und Ergebnisse.",
-        "FalseStatement": "Um KI-Technologien bewerten zu können, müssen die Algorithmen im Code geprüft werden.",
-        "Description": "Für die Analyse von KI Technologien reicht die Bewertung von Eingabedaten und dessen Ergebnissen, das sogenannte Black-Box Testing."
+        "TrueStatement": "Um eine Bewertung zu KI-Technologien abgeben zu können, braucht es nicht zwingend Zugriff auf den Code. Eingabedaten und resultierende Ergebnisse liefern bereits einen wertvolle Einblicke.",
+        "FalseStatement": "Um KI-Technologien bewerten zu können, müssen zwingend die Algorithmen im Code geprüft werden.",
+        "Description": "Für die Analyse von KI Technologien kann bereits die Bewertung von Eingabedaten und dessen Ergebnisse, das sogenannte Black-Box Testing, Evidenz über dessen Perfomanz bieten."
     },
     {
         "id": 8,
@@ -55,9 +55,9 @@
     },
     {
         "id": 9,
-        "TrueStatement": "Nur mit einem Datensatz ohne Lücken kann maschinelles Sehen hinreichend sicher trainiert werden.",
+        "TrueStatement": "Mit einem Datensatz ohne Lücken kann Objektwahrnehmung auf hohem Niveau trainiert werden.",
         "FalseStatement": "Dank KI kann auch mit einem lückenhaften Datensatz perfekte Objektwahrnehmung realisiert werden.",
-        "Description": "Lücken im Trainingssatz der KI führen zu falschen Klassifizierungen im Maschinellem Sehen."
+        "Description": "Lücken im Trainingssatz der KI können zu falschen Klassifizierungen im Maschinellem Sehen führen."
     },
     {
         "id": 10,
