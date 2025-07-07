@@ -1,4 +1,4 @@
-from Quiz.Statement import Statement
+from statements.Statement import Statement
 
 class QuizStatement(Statement):
     def __init__(self, id, trueStatement, falseStatement, description, chosenStatement = "", rightAnswer = False):

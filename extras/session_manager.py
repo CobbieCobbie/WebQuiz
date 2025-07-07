@@ -3,9 +3,9 @@ import streamlit as st
 from streamlit_javascript import st_javascript
 
 
-import Quiz.state_machine as sm
-import Quiz.Statement as Statement
-import Quiz.QuizStatement as QuizStatement
+import extras.state_machine as sm
+import statements.Statement as Statement
+import statements.QuizStatement as QuizStatement
 
 def init():
     if 'state_machine' not in st.session_state:
