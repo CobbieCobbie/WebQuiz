@@ -39,24 +39,34 @@ def update():
     match page_name:
         case "a_welcome":
             st.session_state['state_machine'].current_state = st.session_state['state_machine'].welcome
-        case "b_mark":
+        case "b_management":
             st.session_state['state_machine'].current_state = st.session_state['state_machine'].quiz_start
-        case "c_evaluation":
+        case "c_system":
+            st.session_state['state_machine'].current_state = st.session_state['state_machine'].quiz_start
+        case "d_architecture":
+            st.session_state['state_machine'].current_state = st.session_state['state_machine'].quiz_start
+        case "e_softwaredesign":
+            st.session_state['state_machine'].current_state = st.session_state['state_machine'].quiz_start
+        case "f_softwareintegration":
+            st.session_state['state_machine'].current_state = st.session_state['state_machine'].quiz_start
+        case "g_organisation":
+            st.session_state['state_machine'].current_state = st.session_state['state_machine'].quiz_start
+        case "h_evaluation":
             st.session_state['state_machine'].current_state = st.session_state['state_machine'].quiz_eval
-        case "d_end":
+        case "i_end":
             st.session_state['state_machine'].current_state = st.session_state['state_machine'].result
         case _:
             init()
 
-    if st.session_state['state_machine'].current_state == st.session_state['state_machine'].welcome:
-        
-        for s in st.session_state['statements']:
-            coin = random.choice([True, False])
-            s.rightAnswer = coin
-            if coin:
-                s.chosenStatement = s.trueStatement
-            else:
-                s.chosenStatement = s.falseStatement
+    # if st.session_state['state_machine'].current_state == st.session_state['state_machine'].welcome:
+     
+    #     for s in st.session_state['statements']:
+    #         coin = random.choice([True, False])
+    #         s.rightAnswer = coin
+    #         if coin:
+    #             s.chosenStatement = s.trueStatement
+    #         else:
+    #             s.chosenStatement = s.falseStatement
 
 # useful methods
 

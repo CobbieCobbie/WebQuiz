@@ -9,23 +9,22 @@ st.session_state['state_machine'].send("reset")
 
 # page content
 
-st.title("Welcome to the Quiz")
+st.title("Willkommen zur interaktiven Reifegradanalyse")
 
 
 st.markdown(
 """
-# This is the Welcome Screen
+# Dies ist die interaktive Reifegradanalyse
 
-## Demonstration of your choice
-Place some information about your demonstration here
+## Mehrere Themengebiete werden abgefragt
+Die Reifegradanalyse besteht aus mehreren Themengebieten, die jeweils mehrere Aussagen enthalten.
 
-## How to play
-Click on the statements that you think that are true. When you are done, press the button "Evaluate". Enjoy!           
+Beurteilen sie die Aussagen wahrheitsgemäß mit "Ja" oder "Nein".
 """
 )
 
 
-st.page_link("pages/b_mark.py", label="Start", use_container_width=True, icon="👍")
+st.page_link("pages/b_management.py", label="Start", use_container_width=True, icon="👍")
 
 # debug stuff
 
